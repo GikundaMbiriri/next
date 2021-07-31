@@ -13,7 +13,7 @@ export async function getStaticPaths(){
     const info = await res.json();
     console.log(info)
     return {
-        fallback:false,
+        fallback:'blocking',
         paths:info.map((inf)=>({params:{meetupid:inf.id.toString()}}))
        
     }
